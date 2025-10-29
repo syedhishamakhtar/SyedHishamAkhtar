@@ -1,0 +1,9 @@
+This folder is for images:
+- Add your profile photo as profile.jpg
+- Add portfolio project images
+- Add any other images needed for the website
+
+Recommended image sizes:
+- Profile photo: 400x400px
+- Portfolio images: 600x400px
+- Background images: 1920x1080px
