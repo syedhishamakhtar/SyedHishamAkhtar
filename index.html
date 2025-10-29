@@ -1,0 +1,2270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Agency Pro - Syed Hisham Akhtar</title>
+    <link rel="icon" type="image/png" href="images/DigitalAgencyProLogo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            25% { background-position: 100% 50%; }
+            50% { background-position: 0% 100%; }
+            75% { background-position: 100% 0%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Header */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo img {
+            height: 60px;
+            width: 170px;
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #1a1a1a;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: #667eea;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            padding-top: 100px;
+        }
+
+        @keyframes heroGlow {
+            0% { background-position: 0% 50%; }
+            25% { background-position: 100% 50%; }
+            50% { background-position: 0% 100%; }
+            75% { background-position: 100% 0%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="1" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="1" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            color: white;
+        }
+
+        @keyframes textFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.6s;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        @keyframes buttonGlow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        @keyframes titleShine {
+            0%, 100% { background-position: 0% 50%; }
+            25% { background-position: 100% 50%; }
+            50% { background-position: 0% 100%; }
+            75% { background-position: 100% 0%; }
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about {
+            background: #f8fafc;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-left: 400px;
+        }
+
+        .skill-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            color: #1a1a1a;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.2);
+        }
+
+        .skill-item i {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-visual {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-visual::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="white" opacity="0.1"/><circle cx="80" cy="80" r="2" fill="white" opacity="0.1"/><circle cx="40" cy="60" r="1" fill="white" opacity="0.1"/><circle cx="60" cy="40" r="1" fill="white" opacity="0.1"/></svg>');
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            top:down;
+        }
+        
+        .services-swiper {
+            display: none;
+        }
+        
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #667eea;
+        }
+        
+        .swiper-pagination-bullet-active {
+            background: #667eea;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #667eea, transparent, #4facfe);
+            border-radius: 20px;
+            padding: 2px;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-image {
+            height: 200px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+        }
+
+        .service-image i {
+            font-size: 4rem;
+            color: white;
+            z-index: 2;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        .service-content {
+            padding: 1rem 1rem 0.2rem 1rem;
+        }
+
+        .service-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+
+        .service-content p {
+            color: #666;
+            line-height: 1.5;
+            margin: 0;
+            padding-bottom: 0;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            background: #f8fafc;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .portfolio-image {
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .portfolio-link {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #667eea;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-link:hover {
+            transform: scale(1.1);
+        }
+
+        .portfolio-content {
+            padding: 2rem;
+        }
+
+        .portfolio-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .portfolio-content p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+        }
+
+        .contact-info p {
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 10px;
+        }
+
+        .contact-item i {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .contact-form textarea {
+            height: 120px;
+            resize: vertical;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-section p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #667eea;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #999;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .testimonial-rating {
+            color: #f39c12;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            margin-top: 1rem;
+            color: #666;
+        }
+
+        /* Process Timeline */
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+
+        /* Pricing Calculator */
+        .pricing-calculator {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .calculator-form select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            background: white;
+            color: #1a1a1a;
+        }
+
+        .calculator-result {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 2rem;
+            background: #f8fafc;
+            border-radius: 15px;
+        }
+
+        .calculator-result h3 {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Portfolio Filters */
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 1.5rem;
+            border: 2px solid #667eea;
+            background: transparent;
+            color: #667eea;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-filters {
+                display: flex;
+                flex-direction: column;
+                gap: 0.8rem;
+                max-width: 300px;
+                margin: 0 auto 3rem;
+            }
+            
+            .filter-btn {
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+                width: 100%;
+            }
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #667eea;
+            color: white;
+        }
+
+        .faq-answer {
+            padding: 1.5rem;
+            display: none;
+            color: #1a1a1a;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Guarantees */
+        .guarantees-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .guarantee-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .guarantee-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 2rem;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(45deg, #25d366 0%, #128c7e 50%, #25d366 100%);
+            background-size: 200% 200%;
+            animation: whatsappPulse 2s infinite, whatsappGlow 3s ease infinite;
+            color: white;
+            padding: 1rem;
+            border-radius: 50px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.5), 0 10px 25px rgba(37, 211, 102, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .whatsapp-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .whatsapp-btn:hover::before {
+            left: 100%;
+        }
+
+        @keyframes whatsappPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes whatsappGlow {
+            0%, 100% { background-position: 0% 50%; box-shadow: 0 0 20px rgba(37, 211, 102, 0.5), 0 10px 25px rgba(37, 211, 102, 0.3); }
+            50% { background-position: 100% 50%; box-shadow: 0 0 30px rgba(37, 211, 102, 0.7), 0 10px 35px rgba(37, 211, 102, 0.5); }
+        }
+
+        .whatsapp-text {
+            font-weight: 600;
+        }
+
+        /* Live Chat */
+        .live-chat-widget {
+            position: fixed;
+            bottom: 2rem;
+           left: 1px;
+            z-index: 999;
+        }
+
+        .chat-trigger {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .chat-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #e74c3c;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chat-popup {
+            position: absolute;
+            bottom: 80px;
+            left: 0;
+            width: 300px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.3);
+            display: none;
+            border: 2px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .chat-popup.active {
+            display: block;
+            animation: slideUp 0.3s ease;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 15px 15px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-body {
+            padding: 1rem;
+            color: #1a1a1a;
+        }
+
+        .quick-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .quick-btn {
+            flex: 1;
+            padding: 0.8rem;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 10px;
+            text-decoration: none;
+            color: #667eea;
+            text-align: center;
+            font-size: 0.9rem;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        /* Chatbot */
+        .chatbot-container {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            z-index: 1001;
+        }
+
+        .chatbot-toggle {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+            animation: chatbotPulse 2s infinite;
+        }
+        
+        @keyframes chatbotPulse {
+            0% { transform: scale(1); box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3); }
+            50% { transform: scale(1.05); box-shadow: 0 15px 35px rgba(102, 126, 234, 0.5); }
+            100% { transform: scale(1); box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3); }
+        }
+
+        @keyframes chatbotGlow {
+            0%, 100% { background-position: 0% 50%; box-shadow: 0 0 20px rgba(102, 126, 234, 0.6), 0 0 40px rgba(102, 126, 234, 0.3); }
+            50% { background-position: 100% 50%; box-shadow: 0 0 30px rgba(79, 172, 254, 0.8), 0 0 60px rgba(79, 172, 254, 0.5); }
+        }
+
+        .chatbot-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3); }
+            50% { box-shadow: 0 10px 35px rgba(102, 126, 234, 0.5); }
+            100% { box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3); }
+        }
+
+        .chatbot-window {
+            position: absolute;
+            bottom: 80px;
+            left: 0;
+            width: 350px;
+            height: 500px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 1002;
+        }
+
+        .chatbot-window.active {
+            display: flex !important;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .chatbot-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            background: #f8fafc;
+        }
+
+        .message {
+            margin-bottom: 1rem;
+        }
+
+        .bot-message .message-content {
+            background: white;
+            padding: 0.8rem 1rem;
+            border-radius: 15px 15px 15px 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .user-message {
+            text-align: right;
+        }
+
+        .user-message .message-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.8rem 1rem;
+            border-radius: 15px 15px 5px 15px;
+            display: inline-block;
+            max-width: 80%;
+            font-size: 0.9rem;
+        }
+
+        .chatbot-input {
+            display: flex;
+            padding: 1rem;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .chatbot-input input {
+            flex: 1;
+            border: 2px solid #e2e8f0;
+            border-radius: 25px;
+            padding: 0.8rem 1rem;
+            outline: none;
+            font-size: 0.9rem;
+        }
+
+        .chatbot-input input:focus {
+            border-color: #667eea;
+        }
+
+        .chatbot-send {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-left: 0.5rem;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+            position: relative;
+            background: none;
+            border: none;
+            outline: none;
+            width: 40px;
+            height: 40px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #1a1a1a;
+            margin: 3px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+            display: block;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+            background: #667eea;
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+            background: #667eea;
+        }
+
+        .hamburger:hover span {
+            background: #667eea;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex !important;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background: white;
+                width: 100%;
+                text-align: center;
+                transition: left 0.3s ease;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.1);
+                padding: 2rem 0;
+                z-index: 999;
+                margin: 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu li {
+                margin: 1rem 0;
+            }
+
+            .nav-menu a {
+                font-size: 1.1rem;
+                padding: 0.8rem;
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+            
+            .hero-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+                margin: 0 !important;
+            }
+
+            .services-grid {
+                display: none;
+            }
+            
+            .services-swiper {
+                display: block;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonials-grid,
+            .process-timeline,
+            .guarantees-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-text {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.1rem;
+            }
+            
+            .hero-image {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/my_logo- (1).png" alt="Digital Agency Pro Logo">
+                
+            </div>
+            <button class="hamburger" id="hamburger" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-image">
+                <img src="images/profile.jpg" alt="Syed Hisham Akhtar">
+            </div>
+            <h1>We turn your digital ideas into reality powered by creativity, skill, and trust.</h1>
+            <h2>Your One-Stop Digital Partner for Business Growth</h2>
+            <p>From websites to mobile apps, SEO to marketing campaigns - we handle everything your business needs to dominate online. 500+ satisfied clients worldwide!</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i> Let's Build Something Great 🚀
+                </a>
+                <a href="#portfolio" class="btn btn-secondary">
+                    <i class="fas fa-eye"></i> View My Work
+                </a>
+            </div>
+            <div class="social-links">
+                <a href="https://pk.linkedin.com/in/syed-hisham-akhtar-a3038b311" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://wa.me/923473937379" class="social-link" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.facebook.com/syed.hisham.akhtar.2025/" class="social-link" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/syed_hisham_official/" class="social-link" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Our Agency</h2>
+                <p class="section-subtitle">Leading digital agency with 500+ successful projects and 5+ years of excellence</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Your Complete Digital Partner</h3>
+                    <p style="text-align: center; font-family: 'Inter', sans-serif; line-height: 1.8; color: #555;">Main Syed Hisham Akhtar hoon, ek passionate digital creator jo har project mein apna best deta hai. Amazon aur international clients ke saath Roman Urdu communication ke zariye simple aur friendly approach rakhta hoon creative, clear aur result-oriented.</p>
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 2rem; border-radius: 15px; margin: 2rem 0; color: white; text-align: center;">
+                        <p style="font-style: italic; line-height: 1.8; margin-bottom: 1rem;color:#ffff;">Yeh website maine apni mehnat aur creativity se banai hai har section ek kahani hai us safar ki jo Amazon se Roman Urdu conversations tak gaya. Har design, har line, aur har idea meri soch aur dedication ka aik hissa hai.</p>
+                        <p style="font-weight: 600; font-size: 1.1rem;color:#ffff;">Mera maqsad simple hai: logon ke digital khwab ko reality banana.</p>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            <div>HTML5</div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <div>CSS3</div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js-square"></i>
+                            <div>JavaScript</div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-react"></i>
+                            <div>React</div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-node-js"></i>
+                            <div>Node.js</div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <div>MongoDB</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <i class="fas fa-code"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Complete Digital Agency Services</h2>
+                <p class="section-subtitle">Everything your business needs under one roof - from concept to success</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Web Development</h3>
+                        <p>Custom websites and web applications built with modern technologies. From responsive designs to complex functionality, I create digital experiences that perform beautifully across all devices.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1626785774573-4b799315345d?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Graphic Design</h3>
+                        <p>Visual identity and branding solutions that make your business stand out. From logos to marketing materials, I create designs that communicate your message effectively and memorably.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Video Editing</h3>
+                        <p>Professional video production and editing services for all your content needs. From promotional videos to social media content, I bring your stories to life with engaging visuals.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1562577309-2592ab84b1bc?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>SEO Optimization</h3>
+                        <p>Boost your website's visibility on Google and other search engines. Complete SEO audit, keyword research, on-page optimization, and ranking improvement strategies.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Digital Marketing</h3>
+                        <p>Facebook Ads, Google Ads, Instagram marketing, and social media management. Complete digital marketing campaigns to grow your business online.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Website Maintenance</h3>
+                        <p>Keep your website running smoothly with regular updates, security monitoring, backup services, and technical support. Monthly maintenance packages available.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Mobile App Development</h3>
+                        <p>Native Android & iOS apps, React Native, Flutter development. Complete mobile solutions from concept to app store deployment.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>E-commerce Solutions</h3>
+                        <p>Complete online store setup with payment gateway integration, inventory management, and shopping cart functionality.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1455390582262-044cdead277a?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Content Writing</h3>
+                        <p>Professional website content, blog writing, copywriting, and SEO-optimized content creation for all your business needs.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Logo Animation</h3>
+                        <p>Animated logos, brand intro videos, and motion graphics to make your brand stand out with professional animations.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Domain & Hosting</h3>
+                        <p>Domain registration, web hosting setup, SSL certificates, and complete server management for your online presence.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Business Consultation</h3>
+                        <p>Digital strategy planning, business growth advice, market analysis, and consultation for scaling your online business.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="swiper services-swiper">
+                <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="service-card">
+                                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
+                                <div class="service-content">
+                                    <h3>Web Development</h3>
+                                    <p>Custom websites and web applications built with modern technologies. From responsive designs to complex functionality, I create digital experiences that perform beautifully across all devices.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="service-card">
+                                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1626785774573-4b799315345d?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <div class="service-content">
+                                    <h3>Graphic Design</h3>
+                                    <p>Visual identity and branding solutions that make your business stand out. From logos to marketing materials, I create designs that communicate your message effectively and memorably.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="service-card">
+                                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                                    <i class="fas fa-video"></i>
+                                </div>
+                                <div class="service-content">
+                                    <h3>Video Editing</h3>
+                                    <p>Professional video production and editing services for all your content needs. From promotional videos to social media content, I bring your stories to life with engaging visuals.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="service-card">
+                                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1562577309-2592ab84b1bc?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="service-content">
+                                    <h3>SEO Optimization</h3>
+                                    <p>Boost your website's visibility on Google and other search engines. Complete SEO audit, keyword research, on-page optimization, and ranking improvement strategies.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="service-card">
+                                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                                    <i class="fas fa-bullhorn"></i>
+                                </div>
+                                <div class="service-content">
+                                    <h3>Digital Marketing</h3>
+                                    <p>Facebook Ads, Google Ads, Instagram marketing, and social media management. Complete digital marketing campaigns to grow your business online.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="service-card">
+                                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                                <div class="service-content">
+                                    <h3>Website Maintenance</h3>
+                                    <p>Keep your website running smoothly with regular updates, security monitoring, backup services, and technical support. Monthly maintenance packages available.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="service-card">
+                                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div class="service-content">
+                                    <h3>Mobile App Development</h3>
+                                    <p>Native Android & iOS apps, React Native, Flutter development. Complete mobile solutions from concept to app store deployment.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="service-card">
+                                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                                <div class="service-content">
+                                    <h3>E-commerce Solutions</h3>
+                                    <p>Complete online store setup with payment gateway integration, inventory management, and shopping cart functionality.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="service-card">
+                                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1455390582262-044cdead277a?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                                    <i class="fas fa-pen-fancy"></i>
+                                </div>
+                                <div class="service-content">
+                                    <h3>Content Writing</h3>
+                                    <p>Professional website content, blog writing, copywriting, and SEO-optimized content creation for all your business needs.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="service-card">
+                                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                                <div class="service-content">
+                                    <h3>Logo Animation</h3>
+                                    <p>Animated logos, brand intro videos, and motion graphics to make your brand stand out with professional animations.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="service-card">
+                                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                                    <i class="fas fa-server"></i>
+                                </div>
+                                <div class="service-content">
+                                    <h3>Domain & Hosting</h3>
+                                    <p>Domain registration, web hosting setup, SSL certificates, and complete server management for your online presence.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="service-card">
+                                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="service-content">
+                                    <h3>Business Consultation</h3>
+                                    <p>Digital strategy planning, business growth advice, market analysis, and consultation for scaling your online business.</p>
+                                </div>
+                            </div>
+                        </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1626785774573-4b799315345d?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Graphic Design</h3>
+                        <p>Visual identity and branding solutions that make your business stand out. From logos to marketing materials, I create designs that communicate your message effectively and memorably.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Video Editing</h3>
+                        <p>Professional video production and editing services for all your content needs. From promotional videos to social media content, I bring your stories to life with engaging visuals.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1562577309-2592ab84b1bc?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>SEO Optimization</h3>
+                        <p>Boost your website's visibility on Google and other search engines. Complete SEO audit, keyword research, on-page optimization, and ranking improvement strategies.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Digital Marketing</h3>
+                        <p>Facebook Ads, Google Ads, Instagram marketing, and social media management. Complete digital marketing campaigns to grow your business online.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Website Maintenance</h3>
+                        <p>Keep your website running smoothly with regular updates, security monitoring, backup services, and technical support. Monthly maintenance packages available.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Mobile App Development</h3>
+                        <p>Native Android & iOS apps, React Native, Flutter development. Complete mobile solutions from concept to app store deployment.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>E-commerce Solutions</h3>
+                        <p>Complete online store setup with payment gateway integration, inventory management, and shopping cart functionality.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1455390582262-044cdead277a?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Content Writing</h3>
+                        <p>Professional website content, blog writing, copywriting, and SEO-optimized content creation for all your business needs.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Logo Animation</h3>
+                        <p>Animated logos, brand intro videos, and motion graphics to make your brand stand out with professional animations.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Domain & Hosting</h3>
+                        <p>Domain registration, web hosting setup, SSL certificates, and complete server management for your online presence.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop'); background-size: cover; background-position: center;">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Business Consultation</h3>
+                        <p>Digital strategy planning, business growth advice, market analysis, and consultation for scaling your online business.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section" style="padding-top: 2rem;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Client Testimonials</h2>
+                <p class="section-subtitle">What our satisfied clients say about our work</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"Digital Agency Pro transformed our entire business! Complete website, mobile app, and marketing campaigns. Sales increased 300% in 6 months!"</p>
+                    <div class="testimonial-author">
+                        <strong>Ahmed Khan</strong><br>
+                        <span>CEO, TechStart Solutions</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"Best digital agency! They handled everything - branding, website, SEO, and social media. Now we're #1 in our industry!"</p>
+                    <div class="testimonial-author">
+                        <strong>Sarah Ali</strong><br>
+                        <span>Founder, GreenTech Industries</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"From zero online presence to 50,000 monthly visitors! Their complete digital strategy changed our business forever."</p>
+                    <div class="testimonial-author">
+                        <strong>Usman Sheikh</strong><br>
+                        <span>Director, Fashion Hub</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Timeline Section -->
+    <section class="section" style="background: #f8fafc;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Work Process</h2>
+                <p class="section-subtitle">Simple 4-step process to bring your ideas to life</p>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="process-number">1</div>
+                    <h3>Consultation</h3>
+                    <p>Discuss your requirements and project goals</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">2</div>
+                    <h3>Planning</h3>
+                    <p>Create detailed project plan and timeline</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">3</div>
+                    <h3>Development</h3>
+                    <p>Build your project with regular updates</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">4</div>
+                    <h3>Delivery</h3>
+                    <p>Final testing, launch, and ongoing support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Calculator Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get Instant Quote</h2>
+                <p class="section-subtitle">Calculate your project cost in seconds</p>
+            </div>
+            <div class="pricing-calculator">
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label>Select Service:</label>
+                        <select id="service-select">
+                            <option value="199">Website Development - $199</option>
+                            <option value="25">Logo Design - $25</option>
+                            <option value="49">Video Editing - $49</option>
+                            <option value="99">SEO Optimization - $99</option>
+                            <option value="149">Digital Marketing - $149</option>
+                            <option value="299">Mobile App - $299</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Project Complexity:</label>
+                        <select id="complexity-select">
+                            <option value="1">Basic (1x)</option>
+                            <option value="1.5">Standard (1.5x)</option>
+                            <option value="2">Premium (2x)</option>
+                        </select>
+                    </div>
+                    <div class="calculator-result">
+                        <h3>Estimated Cost: $<span id="total-cost">199</span></h3>
+                        <p>Final price may vary based on specific requirements</p>
+                        <a href="https://wa.me/923473937379" class="btn btn-primary" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Get Exact Quote
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Work</h2>
+                <p class="section-subtitle">A showcase of recent projects that demonstrate my skills and creativity</p>
+            </div>
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="design">Graphic Design</button>
+                <button class="filter-btn" data-filter="video">Video Editing</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop&crop=center'); background-blend-mode: overlay;">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-links">
+                                <a href="#" class="portfolio-link">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="#" class="portfolio-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>E-Commerce Platform</h3>
+                        <p>A full-featured online store with payment integration, inventory management, and responsive design for optimal user experience.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <p style="text-align: center; color: #667eea; font-style: italic; margin-top: 1rem; font-size: 0.9rem;">Designed & developed with ❤️ by Digital Agency Pro.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop&crop=center'); background-blend-mode: overlay;">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-links">
+                                <a href="#" class="portfolio-link">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="#" class="portfolio-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Corporate Website</h3>
+                        <p>Modern business website with dynamic content management, SEO optimization, and seamless user interface design.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                        <p style="text-align: center; color: #667eea; font-style: italic; margin-top: 1rem; font-size: 0.9rem;">Designed & developed with ❤️ by Digital Agency Pro.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="design">
+                    <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop&crop=center'); background-blend-mode: overlay;">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-links">
+                                <a href="#" class="portfolio-link">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="#" class="portfolio-link">
+                                    <i class="fab fa-behance"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Brand Identity Design</h3>
+                        <p>Complete brand identity package including logo, business cards, letterhead, and brand guidelines for a tech startup.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Illustrator</span>
+                            <span class="tech-tag">Photoshop</span>
+                            <span class="tech-tag">Figma</span>
+                        </div>
+                        <p style="text-align: center; color: #667eea; font-style: italic; margin-top: 1rem; font-size: 0.9rem;">Designed & developed with ❤️ by Digital Agency Pro.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" style="background: #f8fafc;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Quick answers to common questions</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How long does it take to complete a project?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Timeline depends on project complexity: Logo design (1-3 days), Website (1-2 weeks), Mobile app (3-6 weeks). We provide exact timeline after consultation.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you provide revisions?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We provide unlimited revisions until you're 100% satisfied. Your satisfaction is our guarantee.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What payment methods do you accept?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept bank transfer, PayPal, credit cards, and local payment methods. 50% advance, 50% on completion.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you work with international clients?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We work with clients worldwide. All communication via WhatsApp, email, or video calls.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantees Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Guarantees</h2>
+                <p class="section-subtitle">Your satisfaction is our priority</p>
+            </div>
+            <div class="guarantees-grid">
+                <div class="guarantee-card">
+                    <div class="guarantee-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>100% Satisfaction</h3>
+                    <p>Not happy? We'll revise until you love it or full money back</p>
+                </div>
+                <div class="guarantee-card">
+                    <div class="guarantee-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>On-Time Delivery</h3>
+                    <p>We deliver on promised dates or compensate for delays</p>
+                </div>
+                <div class="guarantee-card">
+                    <div class="guarantee-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Unlimited Revisions</h3>
+                    <p>Keep requesting changes until it's exactly what you want</p>
+                </div>
+                <div class="guarantee-card">
+                    <div class="guarantee-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Always available for questions and support via WhatsApp</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ready to Grow Your Business?</h2>
+                <p class="section-subtitle">Get a free consultation and discover how we can transform your digital presence</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Start Your Digital Journey</h3>
+                    <p>Our expert team is ready to transform your business with comprehensive digital solutions. From strategy to execution, we handle everything so you can focus on growing your business.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong><br>
+                                syedhisham360@gmail.com
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Phone</strong><br>
+                                +92 347 3937379
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Location</strong><br>
+                                Karachi, Pakistan
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <input type="text" placeholder="Subject" required>
+                    <textarea placeholder="Tell me about your project..." required></textarea>
+                    <button type="submit" class="btn" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%, #ffd700 100%); color: white; padding: 1rem 2rem; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(102, 126, 234, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                        <i class="fas fa-comments"></i> Get a Free Consultation
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Digital Agency Pro</h3>
+                    <p>Complete digital agency providing end-to-end business solutions. From websites to marketing campaigns, we help businesses succeed online with proven strategies and expert execution.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services">Web Development</a></li>
+                        <li><a href="#services">Graphic Design</a></li>
+                        <li><a href="#services">Video Editing</a></li>
+                        <li><a href="#services">Digital Marketing</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Digital Agency Pro. All rights reserved. Empowering businesses with complete digital solutions.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/923473937379" target="_blank" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i>
+            <span class="whatsapp-text">Chat with us!</span>
+        </a>
+    </div>
+
+    <!-- Live Chat Support -->
+    <div class="live-chat-widget">
+        <div class="chat-trigger" id="chat-trigger">
+            <i class="fas fa-comments"></i>
+            <span class="chat-badge">1</span>
+        </div>
+        <div class="chat-popup" id="chat-popup">
+            <div class="chat-header">
+                <h4>💬 Live Support</h4>
+                <button id="chat-close">×</button>
+            </div>
+            <div class="chat-body">
+                <div class="support-message">
+                    <p>👋 Hi! Need help with your project?</p>
+                    <div class="quick-actions">
+                        <a href="https://wa.me/923473937379" target="_blank" class="quick-btn">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <a href="mailto:syedhisham360@gmail.com" class="quick-btn">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot -->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // Hamburger menu
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+            
+            // Initialize Swiper for mobile
+            if (window.innerWidth <= 768) {
+                new Swiper('.services-swiper', {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    autoplay: {
+                        delay: 3000,
+                    },
+                });
+            }
+        });
+    </script>
+    <script src="js/responsive.js"></script>
+</body>
+</html>
